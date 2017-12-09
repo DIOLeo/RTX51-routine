@@ -2,11 +2,11 @@ AUTHOR:DIOLeo
 DATE:2017.12.09
 VERSION:V1.0
 
-¼òµ¥µÄLEDÏÔÊ¾³ÌÐò
+ç®€å•çš„LEDæ˜¾ç¤ºç¨‹åº
 P0.0 - LED0
 P0.2 - LED1
 P0.2 - LED2
-Èç¹ûÄúÊ¹ÓÃµÄÊÇÆÕÖÐ¿Æ¼¼µÄ¿ª·¢°å£¬½«P0¿ÚÓÃÒ»¸öÅÅÏß²åÔÚJ12¼´¿É
-Ê±¼äÆ¬Îª10ms£¬ÈçÐè¸ü¸Ä´ò¿ªConf_tny.A51½«µÚ36ÐÐINT_CLOCKµÄÖµ¸ÄÎªÄãÏëÒªµÄÊý×Ö¼´¿É.Ä¬ÈÏ10000 = 10ms
+å¦‚æžœæ‚¨ä½¿ç”¨çš„æ˜¯æ™®ä¸­ç§‘æŠ€çš„å¼€å‘æ¿ï¼Œå°†P0å£ç”¨ä¸€ä¸ªæŽ’çº¿æ’åœ¨J12å³å¯
+æ—¶é—´ç‰‡ä¸º10msï¼Œå¦‚éœ€æ›´æ”¹æ‰“å¼€Conf_tny.A51å°†ç¬¬36è¡ŒINT_CLOCKçš„å€¼æ”¹ä¸ºä½ æƒ³è¦çš„æ•°å­—å³å¯.é»˜è®¤10000 = 10ms
 
-°æÈ¨ËùÓÐ,ËæÒâ×ªÔØ,×¢Ã÷³ö´¦
+ç‰ˆæƒæ‰€æœ‰,éšæ„è½¬è½½,æ³¨æ˜Žå‡ºå¤„https://github.com/DIOLeo/RTX51_routine/tree/master/20171209_rtx51LED
