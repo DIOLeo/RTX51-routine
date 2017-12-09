@@ -1,8 +1,8 @@
 # 基于51单片机的RTX51 Tiny例程
 ## RTX51 Tiny routine for 8051  
-    随意转载，注明出处 https://github.com/DIOLeo/RTX51_routine/
+    随意转载 注明出处 https://github.com/DIOLeo/RTX51_routine/
 ### Overview 摘要
-    给所有正在学或者想要学习RTX51 Tiny的朋友提供一些自己写的程序，仅供参考  
+    给所有正在学或者想要学习RTX51 Tiny的朋友提供一些自己写的程序 仅供参考  
     您有什么好的意见或者建议欢迎指出 联系方式 1270693113@qq.com  
     如果没有接触过RTX51的朋友建议先阅读官方手册 https://github.com/DIOLeo/RTX51-Tiny-ChineseDoc  
 ### Contents 目录
