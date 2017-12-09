@@ -1,0 +1,89 @@
+C51 COMPILER V9.56.0.0   TASK                                                              12/09/2017 21:24:48 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE TASK
+OBJECT MODULE PLACED IN ..\OBJ\task.obj
+COMPILER INVOKED BY: D:\Keil5_C51\C51\BIN\C51.EXE task.c OPTIMIZE(9,SPEED) BROWSE INCDIR(..\SYSTEM) DEBUG OBJECTEXTEND P
+                    -RINT(.\Listings\task.lst) OBJECT(..\OBJ\task.obj)
+
+line level    source
+
+   1          /*******************************
+   2          AUTHOR:DIOLeo
+   3          DATE:2017.12.09
+   4          VERSION:V1.0
+   5          
+   6          简单的LED显示程序
+   7          Simple LED display application
+   8          P0.0 - LED0
+   9          P0.1 - LED1
+  10          P0.2 - LED2
+  11          如果您使用的是普中科技的开发板，将P0口用一个排线插在J12即可
+  12          时间片为10ms，如需更改打开Conf_tny.A51将第36行INT_CLOCK的值改为你想要的数字即可.默认10000 = 10ms
+  13          INT_CLOCK is the definition of Hardware-Timer tick time in 8051 machine cycles.
+  14          The defult value is 10000 which means 10ms
+  15          If you want to change it,open Conf_tny.A51 and go to line 36
+  16          *******************************/
+  17          #include "userdefine.h"
+  18          
+  19          //三个全局变量,方便波形仿真时查看
+  20          uint32 tick1 = 0;
+  21          uint32 tick2 = 0;
+  22          uint32 tick3 = 0;
+  23          
+  24          void job0() _task_ 0            //任务0
+  25          {
+  26   1              P0 = 0;                                 //初始化端口
+  27   1              os_create_task(1);              //开启任务1
+  28   1              os_create_task(2);              //开启任务2
+  29   1              os_create_task(3);              //开启任务3
+  30   1              
+  31   1              os_delete_task(0);              //删除任务0(因为任务0的作用就是初始化和开启各个任务,根据RTX51编程标准每一个任务都必须
+             -带有死循环，所以需要删除否则程序会无法运行)
+  32   1      }
+  33          
+  34          void job1() _task_ 1            //任务1
+  35          {
+  36   1              while(1)
+  37   1              {
+  38   2                      os_wait2(K_TMO,50);             //等待50个时间片,其等待时间是50*INT_CLOCK=500ms
+  39   2                      P0_0 = P0_0 == 0?1:0;   //P0_0翻转
+  40   2                      tick1 = tick1==0?1:0;   //tick1翻转
+  41   2              }
+  42   1      }
+  43          
+  44          void job2() _task_ 2            //任务2
+  45          {
+  46   1              while(1)
+  47   1              {
+  48   2                      os_wait2(K_TMO,100);    //等待100个时间片,其等待时间是50*INT_CLOCK=1s
+  49   2                      P0_1 = P0_1 == 0?1:0;   //P0_1翻转
+  50   2                      tick2 = tick2==0?1:0;   //tick2翻转
+  51   2              }
+  52   1      }
+  53          
+C51 COMPILER V9.56.0.0   TASK                                                              12/09/2017 21:24:48 PAGE 2   
+
+  54          void job3() _task_ 3            //任务3
+  55          {
+  56   1              while(1)
+  57   1              {
+  58   2                      os_wait2(K_TMO,200);    //等待200个时间片,其等待时间是50*INT_CLOCK=2s
+  59   2                      P0_2 = P0_2 == 0?1:0;   //P0_2翻转
+  60   2                      tick3 = tick3==0?1:0;   //tick3翻转
+  61   2              }
+  62   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    182    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     12    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
